@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import './navbar';
+@mixin center-display{
+  display: flex;
+  flex-direction: column;
+}
+
+* > * {
+    font-family: "Poppins", cursive;
+    margin: 0;
+}
+
+.form-container {
+  height: 100vh;
+  @include center-display();
+  align-items: center;
+  justify-content: center;
+}
+
+body{
+  background: #0f0c29;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+}
+
+.App {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.information{
+  max-width: 978px;
+  width: 100vw;
+  display:flex;
+  border: 1px solid #e9ecef;
+  border-radius: 5px;
+  background-color: white;
+}
+
+
+
+#form{
+  max-width: 320px;
+  width: 100vw;
+  margin: 2em auto;
+
+  & >  input, .btn{
+    border: 1px solid #e9ecef;
+    padding: .9em 1em;
+  }
+
+  & > input:focus{
+    outline: none;
+  }
+
+  & > .btn{
+    background-color: #003049;
+    color: #e9ecef;
+    font-size: 1em;
+    cursor: pointer;
+  }
+}
+
+.form-class{
+ @include center-display();
+ gap: 1em;
+}
+
+
+.information .col-1{
+  margin: auto;
+  padding: 3em 0;
+}
