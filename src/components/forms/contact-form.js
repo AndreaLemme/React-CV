@@ -1,7 +1,7 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 
 const ContactForm = ({ onSubmit }) => {
-  const [contactData, setContactData] = useState({
+  const [contact, setContact] = useState({
     fullName: '',
     email: '',
     phone: '',
@@ -9,13 +9,12 @@ const ContactForm = ({ onSubmit }) => {
   });
 
   const handleChange = (e) => {
-    setContactData({ ...contactData, [e.target.name]: e.target.value });
+    setContact({ ...contact, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit('contact', [contactData]); // Pass the contact data to the parent
-    console.log(contactData); // You can now access the contact data from the context
+    onSubmit(contact); 
   };
   return (
     <section>
@@ -27,25 +26,25 @@ const ContactForm = ({ onSubmit }) => {
               type='text'
               placeholder='Full name'
               name='fullName'
-              value={contactData.fullName}
+              value={contact.fullName}
               onChange={handleChange}/>
                 <input 
                 type='text'
                 placeholder='Email address'
                 name='email'
-                value={contactData.email}
+                value={contact.email}
                 onChange={handleChange} />    
                 <input 
                 type='text'
                 placeholder='Cell phone number'
                 name='phone' 
-                value={contactData.phone}
+                value={contact.phone}
                 onChange={handleChange}/>
                 <input 
                 type='url' 
                 placeholder='Linkedin URL'
                 name='linkedinURL'
-                value={contactData.linkedinURL}
+                value={contact.linkedinURL}
                 onChange={handleChange} />
                 <button className='submitBtn' type='submit'>Submit Info</button>
             </form>

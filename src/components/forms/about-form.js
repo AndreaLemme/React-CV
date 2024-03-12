@@ -10,8 +10,7 @@ export default function AboutForm({ onSubmit }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit('about',about);
-    console.log('Submitted about:', about);
+    onSubmit(about);
 
   }
 

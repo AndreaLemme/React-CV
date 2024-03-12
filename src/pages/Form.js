@@ -36,9 +36,9 @@ const FormContainer = () => {
 
   const handleSubmit = (page, data) => {
     setFormData((prevData) => ({ ...prevData, [page]: data }));
+    console.log('Updated formData:', formData);
     if (currentPage < formPages.length - 1) {
       setCurrentPage((prevPage) => prevPage + 1);
-      console.log(formData);
     } else {
       navigate('/Education');
     }

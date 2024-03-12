@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 
 
+/*
 
 const ContactSection = () => {
   
@@ -24,21 +25,21 @@ const [contact,setContactData]=useState('');
             <p>Full Name: {contact[0].fullName}</p>
           </div>
         )}
-        {/* Render email from formData */}
+       
         {contact.length > 0 && contact[0].email && (
           <div className="contact-item">
             <img src="..styles/assets/email.png" alt="Email" />
             <p>Email: {contact[0].email}</p>
           </div>
         )}
-        {/* Render phone from formData */}
+       
         {contact.length > 0 && contact[0].phone && (
           <div className="contact-item">
             <img src="..styles/assets/phone.png" alt="Phone" />
             <p>Phone: {contact[0].phone}</p>
           </div>
         )}
-        {/* Render LinkedIn from formData */}
+     
         {contact.length > 0 && contact[0].linkedinURL && (
           <div className="contact-item">
             <img src="..styles/assets/linkedin.png" alt="LinkedIn" />
@@ -60,3 +61,5 @@ const [contact,setContactData]=useState('');
 };
 
 export default ContactSection;
+
+*/

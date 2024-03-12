@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import AboutForm from '../forms/about-form';
-
+/*
 
 const AboutSection = ({ about }) => {
   return (
@@ -14,3 +14,5 @@ const AboutSection = ({ about }) => {
 };
 
 export default AboutSection;
+
+*/

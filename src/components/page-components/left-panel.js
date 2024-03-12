@@ -6,8 +6,6 @@ import AboutSection from './about-section';
 const LeftPanel = () => {
   return (
     <div>
-    <AboutSection />
-    <ContactSection />
     </div>
     
   );

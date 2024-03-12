@@ -23,14 +23,20 @@ export default function ExperienceForm( {onSubmit} ) {
   }
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    onSubmit(formData);
+    e.preventDefault(); // Prevent the default form submission behavior
+    onSubmit(experiences); // Pass the entire experiences array
+    setExperience([]);
   };
   const addExperience = () => {
-    setExperience([...experiences,{...formData, id: experiences.length +1}]);
-    setFormData({year:'', company: '', job: '', details: []});
-    setIsAdding(false);
-    setNewDetails('');
+    if (formData.year || formData.company || formData.job) {
+      const newExperience = { ...formData, id: experiences.length + 1 };
+      setExperience([...experiences, newExperience]);
+      setFormData({ year: '', company: '', job: '', details: [] });
+      setIsAdding(false);
+      setNewDetails('');
+    } else {
+      alert('Please enter at least one of the required fields: year, company, or job.');
+    }
 
   }
 

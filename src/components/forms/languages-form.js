@@ -13,13 +13,20 @@ export default function LanguagesForm( {onSubmit} ) {
   };
   
   const addLanguage = () => {
-    setLanguages([...languages, { ...formData, id: languages.length + 1 }]);
-    setFormData({ language: '', proficiency: '' });
+    if (formData.language.trim() !== '' && formData.proficiency.trim() !== '') {
+      const newLanguage = { ...formData, id: languages.length + 1 };
+      setLanguages([...languages, newLanguage]);
+      setFormData({ language: '', proficiency: '' });
+      setIsAdding(false);
+    } else {
+      alert('Please enter both language and proficiency.');
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(formData); 
+    onSubmit(languages);
+    setLanguages([]);
   };
   return (
     <section>

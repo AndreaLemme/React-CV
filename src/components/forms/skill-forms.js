@@ -19,7 +19,8 @@ export default function SkillsForm({ onSubmit }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(formData); 
+    onSubmit(skills); // Pass the entire skills array
+    setSkills([]); 
   };
 
   return (

@@ -31,7 +31,6 @@ export default function AchievementsForm( {onSubmit} ) {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(achievements);
-    console.log(achievements); 
   };
 
   const addAchievement = () => {

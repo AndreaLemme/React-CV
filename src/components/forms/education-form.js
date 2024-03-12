@@ -30,14 +30,20 @@ export default function EducationForm({ onSubmit }) {
     }
   };
   const addEducation = () => {
-    setEducations([...educations, { ...formData, id: educations.length + 1 }]);
-    setFormData({ year: '', name: '', place: '', description: [] });
-    setIsAdding(false);
-    setNewDescription('');
+    if (formData.year || formData.name || formData.place) {
+      const newEducation = { ...formData, id: educations.length + 1 };
+      setEducations([...educations, newEducation]);
+      setFormData({ year: '', name: '', place: '', description: [] });
+      setIsAdding(false);
+      setNewDescription('');
+    } else {
+      alert('Please enter at least one of the required fields: year, name, or place.');
+    }
   };
   const handleSubmit = (e) => {
-    e.preventDefault();
-    onSubmit(formData); 
+    e.preventDefault(); 
+    onSubmit(educations); 
+    setEducations([]); 
   };
 
   const years = [];
