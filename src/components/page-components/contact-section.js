@@ -1,44 +1,55 @@
-import React from "react";
+import React, { useContext, useState } from 'react';
 
-const ContactSection = ({ formData }) => {
-  console.log(formData);
+
+
+const ContactSection = () => {
+  
+
+const [contact,setContactData]=useState('');
+  
+  // Helper function to extract the username from a LinkedIn URL
+  const extractUsername = (url) => {
+    const regex = /linkedin.com\/in\/([^/]+)/;
+    const match = url.match(regex);
+    return match ? match[1] : '';
+  };
 
   return (
     <div>
       <h2>CONTACT</h2>
       <div id="contactContainer">
-        {/* Render full name from formData */}
-        {formData.fullName && (
+        {contact.length > 0 && contact[0].fullName && (
           <div className="contact-item">
             <img src="..styles/assets/user.png" alt="Full Name" />
-            <p>Full Name: {formData.fullName}</p>
+            <p>Full Name: {contact[0].fullName}</p>
           </div>
         )}
-
         {/* Render email from formData */}
-        {formData.email && (
+        {contact.length > 0 && contact[0].email && (
           <div className="contact-item">
             <img src="..styles/assets/email.png" alt="Email" />
-            <p>Email: {formData.email}</p>
+            <p>Email: {contact[0].email}</p>
           </div>
         )}
-
         {/* Render phone from formData */}
-        {formData.phone && (
+        {contact.length > 0 && contact[0].phone && (
           <div className="contact-item">
             <img src="..styles/assets/phone.png" alt="Phone" />
-            <p>Phone: {formData.phone}</p>
+            <p>Phone: {contact[0].phone}</p>
           </div>
         )}
-
         {/* Render LinkedIn from formData */}
-        {formData.linkedinURL && (
+        {contact.length > 0 && contact[0].linkedinURL && (
           <div className="contact-item">
             <img src="..styles/assets/linkedin.png" alt="LinkedIn" />
             <p>
               LinkedIn:
-              <a href={formData.linkedinURL} target="_blank" rel="noopener noreferrer">
-                @{/* Extract username from the URL */}
+              <a
+                href={contact[0].linkedinURL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                @{extractUsername(contact[0].linkedinURL)}
               </a>
             </p>
           </div>

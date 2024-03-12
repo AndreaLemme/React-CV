@@ -9,6 +9,8 @@ import SkillsForm from '../components/forms/skill-forms';
 import AchievementsForm from '../components/forms/achievement-form';
 import ExperienceForm from '../components/forms/expereince-form';
 
+
+
 const formPages = [
   'contact',
   'about',
@@ -36,6 +38,7 @@ const FormContainer = () => {
     setFormData((prevData) => ({ ...prevData, [page]: data }));
     if (currentPage < formPages.length - 1) {
       setCurrentPage((prevPage) => prevPage + 1);
+      console.log(formData);
     } else {
       navigate('/Education');
     }
@@ -64,10 +67,11 @@ const FormContainer = () => {
   };
 
   return (
-    <div className="form-container">
-      <Outlet />
-      {renderForm()}
-    </div>
+      <div className="form-container">
+        <Outlet />
+        {renderForm()}
+      </div>
+
   );
 };
 

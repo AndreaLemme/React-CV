@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 
-
-export default function ContactForm({ onSubmit }) {
-
-  const [formData, setFormData] = useState({
+const ContactForm = ({ onSubmit }) => {
+  const [contactData, setContactData] = useState({
     fullName: '',
     email: '',
     phone: '',
@@ -11,13 +9,13 @@ export default function ContactForm({ onSubmit }) {
   });
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setContactData({ ...contactData, [e.target.name]: e.target.value });
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(formData);
-    console.log()
-  
+    onSubmit('contact', [contactData]); // Pass the contact data to the parent
+    console.log(contactData); // You can now access the contact data from the context
   };
   return (
     <section>
@@ -29,25 +27,25 @@ export default function ContactForm({ onSubmit }) {
               type='text'
               placeholder='Full name'
               name='fullName'
-              value={formData.fullName}
+              value={contactData.fullName}
               onChange={handleChange}/>
                 <input 
                 type='text'
                 placeholder='Email address'
                 name='email'
-                value={formData.email}
+                value={contactData.email}
                 onChange={handleChange} />    
                 <input 
                 type='text'
                 placeholder='Cell phone number'
                 name='phone' 
-                value={formData.phone}
+                value={contactData.phone}
                 onChange={handleChange}/>
                 <input 
                 type='url' 
                 placeholder='Linkedin URL'
                 name='linkedinURL'
-                value={formData.linkedinURL}
+                value={contactData.linkedinURL}
                 onChange={handleChange} />
                 <button className='submitBtn' type='submit'>Submit Info</button>
             </form>
@@ -56,3 +54,5 @@ export default function ContactForm({ onSubmit }) {
     </section>
   )
 }
+
+export default ContactForm;
