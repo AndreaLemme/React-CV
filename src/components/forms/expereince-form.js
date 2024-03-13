@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { updateExperience } from '../../redux';
 
 export default function ExperienceForm( {onSubmit} ) {
+  dispatch = useDispatch();
   const [isAdding, setIsAdding] = useState(false);
   const [experiences, setExperience] = useState([]);
   const [formData,setFormData] = useState({
@@ -24,7 +27,8 @@ export default function ExperienceForm( {onSubmit} ) {
 
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevent the default form submission behavior
-    onSubmit(experiences); // Pass the entire experiences array
+    onSubmit(experiences);
+    dispatch(updateExperience(experiences))
     setExperience([]);
   };
   const addExperience = () => {

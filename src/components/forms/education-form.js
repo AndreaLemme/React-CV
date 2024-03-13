@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { updateEducation } from '../../redux';
 
 export default function EducationForm({ onSubmit }) {
+  const dispatch = useDispatch();
   const [isAdding, setIsAdding] = useState(false);
   const [educations, setEducations] = useState([]);
   const [formData, setFormData] = useState({
@@ -42,7 +45,8 @@ export default function EducationForm({ onSubmit }) {
   };
   const handleSubmit = (e) => {
     e.preventDefault(); 
-    onSubmit(educations); 
+    onSubmit(educations);
+    dispatch(updateEducation(educations)); 
     setEducations([]); 
   };
 

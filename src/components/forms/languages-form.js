@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { updateLanguages } from '../../redux';
+
 
 export default function LanguagesForm( {onSubmit} ) {
+  const dispatch = useDispatch();
   const [isAdding, setIsAdding] = useState(false);
   const [languages, setLanguages] = useState([]);
   const [formData, setFormData] = useState({ 
@@ -26,6 +30,7 @@ export default function LanguagesForm( {onSubmit} ) {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(languages);
+    dispatch(updateLanguages(languages)); 
     setLanguages([]);
   };
   return (

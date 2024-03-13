@@ -1,8 +1,12 @@
 
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { updateAbout } from '../../redux';
 
 export default function AboutForm({ onSubmit }) {
   const [about, setAbout] = useState('');
+
+  const dispatch=useDispatch();
 
   const handleChange = (e) => {
     setAbout(e.target.value);
@@ -11,6 +15,7 @@ export default function AboutForm({ onSubmit }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(about);
+    dispatch(updateAbout(about))
 
   }
 

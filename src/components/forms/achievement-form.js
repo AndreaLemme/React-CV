@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux';
+import { updateAchievements } from '../../redux';
 
 export default function AchievementsForm( {onSubmit} ) {
+  const dispatch=useDispatch();
   const [isAdding, setIsAdding] = useState(false);
   const [achievements,setAchievements]=useState([]);
   const [formData, setFormData]=useState({
@@ -31,6 +34,7 @@ export default function AchievementsForm( {onSubmit} ) {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(achievements);
+    dispatch(updateAchievements(achievements))
   };
 
   const addAchievement = () => {

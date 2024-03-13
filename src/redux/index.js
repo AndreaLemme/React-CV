@@ -1,0 +1,7 @@
+export {updateContact} from './Contact/contactActions'
+export {updateAbout} from './About/aboutActions'
+export {updateLanguages} from './Languages/languagesActions'
+export {updateEducation} from './Education/educationActions'
+export {updateExperience} from './Experience/experienceActions'
+export {updateAchievements} from './Achievements/achievementsActions'
+export {updateSkills} from './Skills/skillsActions'

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Navbar } from '../components/page-components/navbar'
 import LeftPanel from '../components/page-components/left-panel'
-import AboutSection from '../components/page-components/about-section'
+
 
 export default function Education() {
 

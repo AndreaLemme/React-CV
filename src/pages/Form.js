@@ -8,7 +8,7 @@ import LanguagesForm from '../components/forms/languages-form';
 import SkillsForm from '../components/forms/skill-forms';
 import AchievementsForm from '../components/forms/achievement-form';
 import ExperienceForm from '../components/forms/expereince-form';
-import { useDispatch } from 'react-redux';
+
 
 
 
@@ -23,7 +23,6 @@ const formPages = [
 ];
 
 const FormContainer = () => {
-  const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     contact: [],
     about: [],
@@ -37,7 +36,6 @@ const FormContainer = () => {
   const navigate = useNavigate();
 
   const handleSubmit = (page, data) => {
-    dispatch({ type: 'UPDATE_FORM_DATA', page, data });
     setFormData((prevData) => ({ ...prevData, [page]: data }));
     console.log('Updated formData:', formData);
     if (currentPage < formPages.length - 1) {

@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { updateSkills } from '../../redux';
 
 export default function SkillsForm({ onSubmit }) {
+  const dispatch = useDispatch();
   const [skills, setSkills] = useState([]);
   const [formData, setFormData] = useState({
     skill: ''
@@ -19,7 +22,8 @@ export default function SkillsForm({ onSubmit }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(skills); // Pass the entire skills array
+    onSubmit(skills);
+    dispatch(updateSkills(skills)) 
     setSkills([]); 
   };
 

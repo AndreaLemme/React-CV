@@ -2,3 +2,10 @@ FORMS
 
 - change formData to array variables
 - remove console log tests
+- add redux for components with arraus
+\
+
+1. Add form data to each page
+2. Design Left panel
+3. Design Navbar
+4. Design Pages

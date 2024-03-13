@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { updateContact } from '../../redux';
 
 const ContactForm = ({ onSubmit }) => {
+  const dispatch = useDispatch();
   const [contact, setContact] = useState({
     fullName: '',
     email: '',
@@ -15,6 +18,8 @@ const ContactForm = ({ onSubmit }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(contact); 
+    console.log('Contact data being dispatched:', contact); // Add this line
+    dispatch(updateContact(contact)); // Dispatch the updateContact action with the contact data
   };
   return (
     <section>
