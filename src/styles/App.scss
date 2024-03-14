@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import './navbar';
+@import './left-panel';
+@import './education';
 @mixin center-display{
   display: flex;
   flex-direction: column;

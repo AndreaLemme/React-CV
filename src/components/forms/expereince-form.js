@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { updateExperience } from '../../redux';
 
 export default function ExperienceForm( {onSubmit} ) {
-  dispatch = useDispatch();
+  const dispatch = useDispatch();
   const [isAdding, setIsAdding] = useState(false);
   const [experiences, setExperience] = useState([]);
   const [formData,setFormData] = useState({

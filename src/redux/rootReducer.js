@@ -5,6 +5,7 @@ import languagesReducer from "./Languages/languagesReducer";
 import experienceReducer from "./Experience/experienceReducer";
 import achievementsReducer from "./Achievements/achievementsReducer";
 import skillsReducer from "./Skills/skillsReducer";
+import educationReducer from "./Education/educationReducer";
 
 const rootReducer = combineReducers({
     contact: contactReducer,
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
     languages : languagesReducer,
     experience : experienceReducer,
     achievements : achievementsReducer,
-    skills : skillsReducer
+    skills : skillsReducer,
+    educations : educationReducer
 })
 
 export default rootReducer

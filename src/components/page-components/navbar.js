@@ -6,16 +6,16 @@ export const Navbar=()=> {
     <nav>
         <ul>
             <li>
-                <Link to ="/education">Education</Link>
+                <Link to ="/education">EDUCATION</Link>
             </li>
             <li>
-                <Link to ="/achievements">Achievements</Link>
+                <Link to ="/achievements">ACHIEVEMENTS</Link>
             </li>
             <li>
-                <Link to ="/experience">Experience and Projects</Link>
+                <Link to ="/experience">EXPERIENCE AND PROJECTS</Link>
             </li>
             <li>
-                <Link to ="/skills">Skills</Link>
+                <Link to ="/skills">SKILLS</Link>
             </li>
         </ul>
     </nav>

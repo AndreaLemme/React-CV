@@ -1,22 +1,28 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import emailImg from '../../styles/assets/email.png';
+import phoneImg from '../../styles/assets/phone.png';
+import linkedinImg from '../../styles/assets/linkedin.png';
 
 const LeftPanel = () => {
   const contactData = useSelector((state) => state.contact);
   const abouttData = useSelector((state) => state.about);
   const languageData = useSelector((state) => state.languages);
-  console.log('Contact data from Redux store:', languageData); // Add this line
+  
 
 
 
   return (
-    <div>
+    <div class="left-panel">
       <h2>Contact</h2>
       {Object.keys(contactData).length > 0 ? (
         <div>
           <p>Full Name: {contactData.fullName}</p>
+          <img src={emailImg} alt='email-icon' />
           <p>Email: {contactData.email}</p>
+          <img src={phoneImg} alt='phone-icon' />
           <p>Phone: {contactData.phone}</p>
+          <img src= {linkedinImg} alt='linkedin-icon' />
           <p>LinkedIn URL: {contactData.linkedinURL}</p>
         </div>
       ) : (

@@ -1,0 +1,35 @@
+@import './variables';
+
+.education-item {
+    margin: 20px;
+    font-family: 'Monsterat', sans-serif;
+  
+    // Nested styles
+    .education-details {
+      display: flex;
+      margin-left: 35%;
+  
+      // Nested styles
+      .info-wrapper {
+        margin-left: 40px;
+  
+        // Use the heading color variable
+        &> h4,h3 {
+          color:$heading-color;
+        }
+  
+        .place {
+          font-style: italic;
+        }
+      }
+    }
+  
+    .description-list {
+      margin-top: 10px;
+      margin-left: 40%;
+  
+      li {
+        margin-bottom: 1rem;
+      }
+    }
+  }
